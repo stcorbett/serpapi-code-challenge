@@ -10,9 +10,9 @@ class CarrouselNode
     {
       name: node.at_css(".kltat").text,
       extensions: node.css(".klmeta").collect(&:text),
-      link: "#{url}/#{node.at_css("a").attribute("href")}",
+      link: "#{url}#{node.at_css("a").attribute("href")}",
       image: node.at_css("g-img img").attribute("src")
-    }
+    }.reject { |_, v| v == nil || v.empty? }
   end
 
 end

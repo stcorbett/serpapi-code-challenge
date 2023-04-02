@@ -2,8 +2,6 @@ require 'ferrum'
 require 'json'
 require_relative './carrousel_node'
 
-require 'pry'
-
 class GoogleParser
   def initialize(filename)
     @browser = Ferrum::Browser.new

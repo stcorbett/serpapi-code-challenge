@@ -19,7 +19,7 @@ RSpec.describe CarrouselNode do
     end
 
     it "returns the node's link" do
-      expect(attrs[:link]).to eq("http://localhost//search?gl=us&hl=en&q=The+Starry+Night&stick=H4sIAAAA")
+      expect(attrs[:link]).to eq("http://localhost/search?gl=us&hl=en&q=The+Starry+Night&stick=H4sIAAAA")
     end
 
     it "returns the node's image" do
