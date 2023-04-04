@@ -22,4 +22,19 @@ RSpec.describe GoogleParser do
       )
     end
   end
+
+  describe 'Updated carousel format on a google search' do
+    let(:parser) { GoogleParser.new("file://#{ file_path }/ferrum/alt.html") }
+    let(:extracted) {JSON.parse(parser.json)}
+
+    it "returns json with extracted artwork" do
+      expect(extracted).to include(
+        "artworks" => include(
+          hash_including("name" => "The Starry Night"),
+          hash_including("name" => "Mickey"),
+          hash_including("name" => "The Kiss")
+        )
+      )
+    end
+  end
 end
